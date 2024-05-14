@@ -6,7 +6,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            string chooses = " 1 => Vloz auto\n 2 => Odstran auto\n 3 => Zoznam aut\n 4 => Info o aute \n 5 => koniec"
+            string chooses = " 1 => Vloz auto\n 2 => Odstran auto\n 3 => Zoznam aut\n 4 => Info o aute \n 5 => koniec";
             List<Auto> automobils = new();
             bool doing = true;
             Console.Clear();
@@ -19,12 +19,11 @@ namespace Program
             {
                 Console.WriteLine("Evidencia aut, zadaj volbu:\n");
                 Console.WriteLine(chooses);
-                choosed = GetIntInRange("Volba: ", 1, 5);
                 
-                switch (choosed)
+                switch (GetIntInRange("Volba: ", 1, 5))
                 {
-                    case 1: 
-                    case 2: automobils.Remove(Auto.GetAutoInList(ref automobils, )); break;
+                    case 1: break;
+                    case 2: automobils.Remove(Auto.GetAutoInList(ref automobils)); break;
                     case 5: doing = false; break;
                 }
             }

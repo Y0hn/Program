@@ -95,4 +95,54 @@
             return s;
         }
     }
+
+    public interface IKmenovyZamestnanec
+    {
+        string zariadenie { get; }
+        void Bonus(int navysenie);
+    }
+    public interface IZamestnanec
+    {
+        string celeMeno { get; }
+        int plat { get; set; }
+    }
+    public interface IKontaktZamestnanec
+    {
+        int rokZahajenia { get; }
+        int MesacnyBonus();
+    }
+    public class Zamestnanec : IKmenovyZamestnanec, IZamestnanec
+    {
+        public Zamestnanec(string meno, string zar, int plat)
+        {
+            celeMeno = meno;
+            zariadenie = zar;
+            this.plat = plat;
+        }
+        public string zariadenie { get; set; }
+        public string celeMeno { get; set; }
+        public int plat { get; set; }
+        public void Bonus(int nav)
+        {
+            plat += nav;
+        }
+    }
+    public class ZamestnanecKontakt : IZamestnanec, IKontaktZamestnanec
+    {
+        public ZamestnanecKontakt(string zariadenie, int plat, string celeMeno, int rokZahajenia)
+        {
+            this.zariadenie = zariadenie;
+            this.plat = plat;
+            this.celeMeno = celeMeno;
+            this.rokZahajenia = rokZahajenia;
+        }
+        public string zariadenie { get; private set; }
+        public int plat { get; set; }
+        public string celeMeno { get; set; }
+        public int rokZahajenia { get; set; }
+        public int MesacnyBonus()
+        {
+            return plat + rokZahajenia;
+        }
+    }
 }

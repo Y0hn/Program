@@ -96,7 +96,8 @@ namespace Auta
         }
         public static Auto GetAutoInList(ref List<Auto> autos)
         {
-            Auto auto = null
+            Auto auto = null;
+            string nazov = "";
             while (auto == null)
             {
                 foreach (Auto a in autos)
