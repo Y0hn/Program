@@ -1,0 +1,14 @@
+/home/y0hn/Documents/Program/bin/Debug/net8.0/Program
+/home/y0hn/Documents/Program/bin/Debug/net8.0/Program.deps.json
+/home/y0hn/Documents/Program/bin/Debug/net8.0/Program.runtimeconfig.json
+/home/y0hn/Documents/Program/bin/Debug/net8.0/Program.dll
+/home/y0hn/Documents/Program/bin/Debug/net8.0/Program.pdb
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.GeneratedMSBuildEditorConfig.editorconfig
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.AssemblyInfoInputs.cache
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.AssemblyInfo.cs
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.csproj.CoreCompileInputs.cache
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.dll
+/home/y0hn/Documents/Program/obj/Debug/net8.0/refint/Program.dll
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.pdb
+/home/y0hn/Documents/Program/obj/Debug/net8.0/Program.genruntimeconfig.cache
+/home/y0hn/Documents/Program/obj/Debug/net8.0/ref/Program.dll
