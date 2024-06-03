@@ -1,26 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/y0hn/Documents/Program/Program.csproj": {}
+    "c:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj": {}
   },
   "projects": {
-    "/home/y0hn/Documents/Program/Program.csproj": {
+    "c:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/y0hn/Documents/Program/Program.csproj",
+        "projectUniqueName": "c:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj",
         "projectName": "Program",
-        "projectPath": "/home/y0hn/Documents/Program/Program.csproj",
-        "packagesPath": "/home/y0hn/.nuget/packages/",
-        "outputPath": "/home/y0hn/Documents/Program/obj/",
+        "projectPath": "c:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj",
+        "packagesPath": "C:\\Users\\janik\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\janik\\Documents\\GitHub\\Program\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/y0hn/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\janik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
         },
         "frameworks": {
           "net8.0": {
@@ -32,6 +37,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,18 +58,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
