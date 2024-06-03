@@ -1,13 +1,10 @@
-﻿using Auta;
-
-namespace Program
+﻿namespace Program
 {
     class Program
     {
         static void Main(string[] args)
         {
             ObsluznyProgram.Auta();
-            
         }
     }
 }
