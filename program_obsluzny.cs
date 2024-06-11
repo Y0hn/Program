@@ -2,16 +2,19 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
 using System.Linq;
+using System.IO;
 using System;
 using Budovy;
 using Osoby;
 using Ucty;
 using Auta;
+using System.Reflection;
 
 namespace Program
 {
     class ObsluznyProgram
-    {
+    {        
+        const string path = @"C:/Users/janik/Documents/GitHub/Program/";
         public static void Auta()
         {
             string chooses = " 1 => Vloz auto\n 2 => Odstran auto\n 3 => Zoznam aut\n 4 => Info o aute \n 5 => koniec";
@@ -123,6 +126,81 @@ namespace Program
             }
             while (!(suc && min <= ret && ret <= max ));
             return ret;
+        }
+        public static void Vynimky()
+        {
+            int[] pole = new int[10];
+            for (int i = 0; i < 10; i++)
+                pole[i] = 10 - i;
+
+            for (; ; )
+            {
+                try
+                {
+                    int i = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"Pole[{i}] = {pole[i]}");
+                }
+                catch (FormatException ex)
+                { 
+                    Console.WriteLine("Nespravny format ");
+                }
+                catch (IndexOutOfRangeException ex)
+                {
+                    Console.WriteLine("Index mimo range ");
+                }
+                finally
+                {
+                    Console.WriteLine("Try again\n");
+                }
+            }
+        }
+        public static void Subory()
+        {
+            int a, b;
+            DateTime time;
+            for (;;)
+            {
+                try
+                {
+                    Console.Write("Zadaj cislo: ");
+                    a = int.Parse(Console.ReadLine());
+                    b = 10/a;
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("Chyba");
+                    time = DateTime.Now;
+                    DebugLog($"[{time}] {ex.Message}");
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Chyba");
+                    time = DateTime.Now;
+                    DebugLog($"[{time}] {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Try again\n");
+                }
+            }
+        }
+        private static void DebugLog(string message)
+        {
+            string filename = "subor.txt";
+            if (File.Exists(path + filename))
+            {
+                using (StreamWriter sw = new StreamWriter(path + filename, true))
+                {
+                    sw.WriteLine(message);
+                    sw.Flush();
+                }
+            }
+            else
+            {
+                Console.Write("Unable to log: ");
+                Console.WriteLine(message);
+                Console.WriteLine("Log file does not exist! ");
+            }            
         }
     }
 }

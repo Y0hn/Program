@@ -1,0 +1,11 @@
+[11. 6. 2024 9:09:11] Attempted to divide by zero.
+[11. 6. 2024 9:10:04] Attempted to divide by zero.
+[11. 6. 2024 9:10:08] The input string 'rt' was not in a correct format.
+[11. 6. 2024 9:13:55] Attempted to divide by zero.
+[11. 6. 2024 9:13:59] The input string 'OOO' was not in a correct format.
+[11. 6. 2024 9:14:01] The input string '' was not in a correct format.
+[11. 6. 2024 9:14:13] The input string '' was not in a correct format.
+[11. 6. 2024 9:14:22] The input string 'text' was not in a correct format.
+[11. 6. 2024 9:14:29] The input string '!exclude' was not in a correct format.
+[11. 6. 2024 9:21:42] The input string 'u' was not in a correct format.
+[11. 6. 2024 9:21:45] Attempted to divide by zero.

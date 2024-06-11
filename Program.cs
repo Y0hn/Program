@@ -1,10 +1,12 @@
-﻿namespace Program
+﻿using System.IO;
+
+namespace Program
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            ObsluznyProgram.Auta();
+            ObsluznyProgram.Subory();
         }
     }
 }

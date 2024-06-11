@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bin",
-    "\\bin\\Debug",
-    "\\bin\\Debug\\net8.0"
+    "\\bin"
   ],
-  "SelectedNode": "\\Program.csproj",
+  "SelectedNode": "\\subor.txt",
   "PreviewInSolutionExplorer": false
 }
