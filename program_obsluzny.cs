@@ -9,6 +9,7 @@ using Osoby;
 using Ucty;
 using Auta;
 using System.Reflection;
+using System.Security.Cryptography;
 
 namespace Program
 {
@@ -157,7 +158,7 @@ namespace Program
         public static void Subory()
         {
             int a, b;
-            DateTime time;
+
             for (;;)
             {
                 try
@@ -169,14 +170,12 @@ namespace Program
                 catch (DivideByZeroException ex)
                 {
                     Console.WriteLine("Chyba");
-                    time = DateTime.Now;
-                    DebugLog($"[{time}] {ex.Message}");
+                    DebugLog(ex.Message);
                 }
                 catch (FormatException ex)
                 {
                     Console.WriteLine("Chyba");
-                    time = DateTime.Now;
-                    DebugLog($"[{time}] {ex.Message}");
+                    DebugLog(ex.Message);
                 }
                 finally
                 {
@@ -186,21 +185,68 @@ namespace Program
         }
         private static void DebugLog(string message)
         {
-            string filename = "subor.txt";
+            var time = DateTime.Now;
+            string filename = "debug.log";
             if (File.Exists(path + filename))
             {
                 using (StreamWriter sw = new StreamWriter(path + filename, true))
                 {
-                    sw.WriteLine(message);
+                    sw.WriteLine($"[{time}] " + message);
                     sw.Flush();
                 }
             }
             else
             {
                 Console.Write("Unable to log: ");
-                Console.WriteLine(message);
+                Console.WriteLine($"[{time}] " + message);
                 Console.WriteLine("Log file does not exist! ");
             }            
+        }
+        public static void ReadDebug(string filename = "debug.log")
+        {
+            using (var sr = new StreamReader(path + filename))
+            {
+                for (int i = 0; !sr.EndOfStream; i++)
+                    Console.WriteLine($"[{(i + 1).ToString().PadLeft(6,'0')}] line: {sr.ReadLine()}");
+                sr.Close();
+            }
+        }
+        public static void Subory2 ()
+        {
+            ObsluznyProgram.Subor2Write("Monika, Jano, Peter, Vanada, Tomas");
+            try
+            {
+
+                string text = "";
+                using (var sr = new StreamReader(path + "subor2.txt"))
+                {
+                    string[] temp = sr.ReadToEnd().Split('\n');
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        string[] temp2 = temp[i].Split(',');
+                        for (int j = 0; j < temp2.Length; j++)
+                            text += temp2[j].Trim() + "\n";
+                    }
+                    sr.Close();
+                }
+                using (var sw = new StreamWriter(path + "subor1.txt"))
+                {
+                    sw.Write(text);
+                    sw.Close();
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                DebugLog("File not found: " + ex.FileName);
+            }
+        }
+        private static void Subor2Write(string w)
+        {
+            using (var sw = new StreamWriter(path + "subor2.txt"))
+            {
+                sw.WriteLine(w);
+                sw.Close();
+            }
         }
     }
 }

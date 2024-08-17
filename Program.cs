@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 
 namespace Program
 {
@@ -6,7 +7,9 @@ namespace Program
     {
         public static void Main()
         {
-            ObsluznyProgram.Subory();
+            ObsluznyProgram.Subory2();
+            ObsluznyProgram.ReadDebug("subor1.txt");
+            Console.ReadKey();
         }
     }
 }
