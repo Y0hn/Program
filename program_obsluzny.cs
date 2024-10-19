@@ -8,6 +8,7 @@ using Budovy;
 using Osoby;
 using Ucty;
 using Auta;
+using Produkty;
 using System.Reflection;
 using System.Security.Cryptography;
 
@@ -43,6 +44,29 @@ namespace Program
             }
             Console.ReadKey();
             Console.Clear();
+        }
+        private static Dictionary<KniznyProdukt, int> sklad = new();
+        public static void Knihy()
+        {
+            var xml = """
+            <element attr="content">
+                <body>
+                </body>
+            </element>
+            """;
+            /*
+            foreach (int i in  ProduceEvenNumbers(6))
+                Console.WriteLine(i);
+            */
+            Console.WriteLine(xml);
+            Console.ReadKey();
+        }
+        static IEnumerable<int> ProduceEvenNumbers(int upto)
+        {
+            for (int i = 0; i <= upto; i += 2)
+            {
+                yield return i;
+            }
         }
         public static void Zamestnanec()
         {
@@ -246,6 +270,38 @@ namespace Program
             {
                 sw.WriteLine(w);
                 sw.Close();
+            }
+        }
+        public static void Suciastky()
+        {
+            Suciastka suc = new Suciastka();
+            Console.WriteLine(suc);
+        }
+        public static void SuciastkyInput()
+        {
+            List<Suciastka> sucs = new();
+            while (true)
+            {
+                Console.WriteLine("1 - Pridat\n2 - Vyhladat\n3 - Odobrat\nnic - vypis listu");
+                switch (Console.ReadLine().Trim())
+                {
+                    case "1":
+                        sucs.Add(Suciastka.GetInput());
+                        break;
+                    case "2":
+                        Console.Write("Nazov suciastky: ");
+                        Console.WriteLine(sucs.Find(s => s.nazov == Console.ReadLine().Trim()));
+                        break;
+                    case "3":
+                        Console.Write("Nazov suciastky: ");
+                        sucs.Remove(sucs.Find(s => s.nazov == Console.ReadLine().Trim()));
+                        break;
+                    default:
+                        foreach(var s in sucs)
+                            Console.WriteLine(s.nazov);
+                        break;
+
+                }
             }
         }
     }

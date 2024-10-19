@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gB5b/qU8Lb8=",
+  "dgSpecHash": "iyry08B8lVEhBl8zt5uCJt/nOv0W0VtXtCa1DbsaDQpomsv4nVIb2zrtKzuc4J02EhVhALhocJd1DXkIEHqnrQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/arrow/Documents/program/Program.csproj",
+  "expectedPackageFiles": [
+    "/home/arrow/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+  ],
   "logs": []
 }
