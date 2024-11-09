@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
@@ -10,7 +11,6 @@ using Ucty;
 using Auta;
 using Produkty;
 using System.Reflection;
-using System.Security.Cryptography;
 
 namespace Program
 {
@@ -302,6 +302,158 @@ namespace Program
                         break;
 
                 }
+            }
+        }
+        public static void VodiciAutobusov()
+        {
+            List<Autobus> autobusy = new();
+            List<Vodic> vodici = new();
+            string zadanie = "Pridaj [1/p]\nVyhladaj [2/v]\nNastav vodica [3/nv]\n\nUkonci program: [99]\n:";
+            string submenu = "Autobus [1/a]\nVodica [2/v]\n\nSpat do menu []\n:";
+            bool loop = true;
+
+            while (loop)
+            {
+                Console.Clear();
+                Console.Write(zadanie);
+                string vstup = Console.ReadLine().Trim().ToLower();
+                Autobus a; Vodic v;
+                switch (vstup)
+                {
+                    case "1":
+                    case "p":
+                        vstup = AutobuSub(submenu);
+                        switch (vstup)
+                        {
+                            case "1":
+                            case "a":
+                                autobusy.Add(Autobus.GetAutobus());
+                                break;
+                            case "2":
+                            case "v":
+                                vodici.Add(Vodic.GetVodic());
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case "2":
+                    case "v":
+                        vstup = AutobuSub(submenu);
+                        switch (vstup)
+                        {
+                            case "1":
+                            case "a":
+                                Console.Write("SPZ: ");
+                                vstup = Console.ReadLine().Trim();
+                                a = autobusy.Find(a => a.SPZ == vstup);
+                                if (a != null)
+                                    Console.WriteLine(a);
+                                else
+                                    Console.WriteLine("Nenajdene");
+                                break;
+                            case "2":
+                            case "v":
+                                Console.Write("Meno: ");
+                                vstup = Console.ReadLine().Trim();
+                                v = vodici.Find(v => v.meno == vstup);
+                                if (v != null)
+                                    Console.WriteLine(v.Vypis());
+                                else
+                                    Console.WriteLine("Nenajdene");
+                                break;
+                            default:
+                                break;
+                        }
+                        Console.ReadKey();
+                        break;
+                    case "3":
+                    case "nv":
+                        Console.Write("Meno vodica: ");
+                        vstup = Console.ReadLine().Trim();
+                        v = vodici.Find(v => v.meno == vstup);
+                        if (v != null && !v.obsadeny)
+                        {
+                            Console.Write("SPZ: ");
+                            vstup = Console.ReadLine().Trim();
+                            a = autobusy.Find(a => a.SPZ == vstup);
+                            if (a != null)
+                            {
+                                a.SetVodic(v);
+                                v.obsadeny = true;
+                            }
+                            else
+                                Console.WriteLine("Nenajdene");
+                            break;
+                        }
+                        else if (v.obsadeny)
+                            Console.WriteLine("Vodic uz ma autobus");
+                        else
+                            Console.WriteLine("Nenajdene");
+                        Console.ReadKey();
+                        break;
+                    case "99":
+                        loop = false;
+                        break;
+                }
+            }
+        }
+        private static string AutobuSub(string subM)
+        {
+            Console.Write(subM);
+            return Console.ReadLine().Trim().ToLower();
+        }
+        public static void ManazovanieZamestnanov()
+        {
+            bool loop = true, error = false, wait = true;
+            List<ManazovanyZamestnanec> list = new();
+
+            while (loop)
+            {
+                Console.Clear();
+                Console.Write("Co chces robit?\n\n[1] => vypis\n[2] => pridat\n[3] => zmaz\n[99] => ukonci\n:");
+                if (error)
+                {
+                    Console.Write("\bChyba pri predchazajucom vstupe:");
+                    error = false;
+                }
+                ManazovanyZamestnanec mz;
+                switch (Console.ReadLine().Trim())
+                {
+                    case "1": 
+                        Console.WriteLine("\nid\tmeno\tmanazer-id"); 
+                        foreach (ManazovanyZamestnanec zam in list)
+                            Console.WriteLine(zam);
+                        break;
+                    case "2":
+                        Console.Write("\nMeno: "); string mp = Console.ReadLine();
+                        Console.Write("Cislo manazera: ");
+                        int.TryParse(Console.ReadLine(), out int i);
+                        mz = list.Find(z => z.id == i);
+                        if (mz == null)
+                            Console.WriteLine("Neexituje");
+                        list.Add(new(mp, mz));
+                        break;
+                    case "3":
+                        Console.Write("\nID: "); int id = int.Parse(Console.ReadLine());
+                        mz = list.Find(z => z.id == id);
+                        if (mz == null)
+                            Console.WriteLine("Neexituje");
+                        else
+                        {
+                            list.Remove(mz);
+                            foreach(ManazovanyZamestnanec zam in list.FindAll(z => z.manazer == mz))
+                                zam.manazer = null;
+                        }
+                        break;
+                    case "99": loop = false; wait = false; break;
+                    default: error = true; break;
+                }
+
+                if (wait)
+                    Console.ReadKey();
+                else
+                    wait = true;
             }
         }
     }

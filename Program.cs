@@ -7,7 +7,7 @@
     {
         static void Main()
         {
-            ObsluznyProgram.SuciastkyInput();
+            ObsluznyProgram.ManazovanieZamestnanov();
         }
     }
 }

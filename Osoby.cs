@@ -145,4 +145,82 @@
             return plat + rokZahajenia;
         }
     }
+    public class Vodic
+    {
+        public string meno { get; }
+        private int rokNarodenia;
+        private bool bezNehody;
+        public bool obsadeny;
+
+        public Vodic(string name, int rN, bool bN = true, bool ob = false)
+        {
+            meno = name;
+            rokNarodenia = rN;
+            bezNehody = bN;
+            obsadeny = ob;
+        }
+        public static Vodic GetVodic(bool simple = true)
+        {
+            Vodic v = null;
+            Console.Write("Meno: ");
+            string name = Console.ReadLine().Trim();
+            Console.Write("Rok narodenia: ");
+            int rN = int.Parse(Console.ReadLine().Trim());
+
+            if (simple)
+            {
+                Console.WriteLine("Nebural");
+                Console.WriteLine("Nema prideleny autobus");
+                v = new Vodic (name, rN);
+            }
+
+            return v;            
+        }
+        public string Vypis()
+        {
+            return 
+            $"===< {meno} >===\n" +
+            $"rok narodenia: {rokNarodenia}\n" +
+            $"nehodobval: {!bezNehody}\n" +
+            $"ma prideleny autobus: {obsadeny}";
+        }
+        public override string ToString()
+        {
+            return meno;
+        }
+    }
+    public class ManazovanyZamestnanec
+    {
+        public int id { get; }
+        public string meno;
+        public string priezvisko;
+        public ManazovanyZamestnanec manazer;
+
+        private static int count;
+        static ManazovanyZamestnanec()
+        {
+            count = 1;
+        }
+        public ManazovanyZamestnanec(string name, ManazovanyZamestnanec mz = null)
+        {
+            this.id = count;
+            string[] n = name.Split(' ');
+            this.meno = n[0];
+            if (n.Length > 1)
+                this.priezvisko = n[1];
+            else
+                this.priezvisko = "";
+            this.manazer = mz;
+            count++;
+        }
+        public override string ToString()
+        {
+            string m;
+            if (manazer == null)
+                m = "null";
+            else
+                m = manazer.id.ToString();
+            return $"{id}\t{meno} {priezvisko}\t{m}";
+        }
+    }
 }
