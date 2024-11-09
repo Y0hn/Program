@@ -1,0 +1,8 @@
+# Ingore this
+obj
+bin
+.vscode
+.vs
+
+# Dont Ingore
+!.gitignore

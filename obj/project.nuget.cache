@@ -1,17 +1,17 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "sjhwWPfD+Cc=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj",
-  "expectedPackageFiles": [],
-=======
   "dgSpecHash": "W4rmp4Empu9rXGlkz1AOsk4Uy9MqsyiZoWAkWHYZsK+vFD5aQdam0tsL7dnv6BV8LmUSeAefjY1TzmQPiKZm/Q==",
   "success": true,
   "projectFilePath": "/home/arrow/Documents/program/Program.csproj",
   "expectedPackageFiles": [
     "/home/arrow/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.10/microsoft.aspnetcore.app.ref.8.0.10.nupkg.sha512"
   ],
->>>>>>> be2241c9a1031cd1581fd90f19637533d046b474
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /home/arrow/Documents/program/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
