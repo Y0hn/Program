@@ -7,8 +7,7 @@
     {
         static void Main()
         {
-            Console.Write(Console.ReadLine());
-            Console.ReadKey();
+            
         }
     }
 }

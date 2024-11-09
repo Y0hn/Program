@@ -205,4 +205,52 @@ namespace Auta
                     $"Miest na sedenie: {seats}";
         }
     }
+    public class Autobus
+    {
+        public string SPZ { get; }
+        private byte pocetMiest;
+        private int rokVyroby;
+        private Osoby.Vodic vodic;
+
+        public Autobus(string spz, byte pM, int rV, Osoby.Vodic v = null)
+        {
+            SPZ = spz;
+            pocetMiest = pM;
+            rokVyroby = rV;
+            vodic = v;
+        }
+        public static Autobus GetAutobus()
+        {
+            Autobus a;
+
+            Console.Write("SPZ: ");
+            string s = Console.ReadLine();
+            Console.Write("Pocet miest: ");
+            byte pM = byte.Parse(Console.ReadLine().Trim());
+            Console.Write("Rok vyroby: ");
+            int rV = int.Parse(Console.ReadLine().Trim());
+            
+            a = new Autobus (s, pM, rV);
+
+            return a;
+        }
+        public void SetVodic(Osoby.Vodic v)
+        {
+            vodic = v;
+        }
+        public override string ToString()
+        {
+            string s =
+            $"===< {SPZ} >===\n" +
+            $"pocet miest: {pocetMiest}\n" +
+            $"rok vyroby: {rokVyroby}\n";
+
+            if (vodic != null)
+                s += $"vodic: {vodic}";
+            else
+                s += "Nema vodica";
+                
+            return s;
+        }
+    }
 }
