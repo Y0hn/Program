@@ -8,25 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/arrow/.nuget/packages/": {}
+    "C:\\Users\\janik\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/arrow/Documents/program/Program.csproj",
+      "projectUniqueName": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj",
       "projectName": "Program",
-      "projectPath": "/home/arrow/Documents/program/Program.csproj",
-      "packagesPath": "/home/arrow/.nuget/packages/",
-      "outputPath": "/home/arrow/Documents/program/obj/",
+      "projectPath": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Program.csproj",
+      "packagesPath": "C:\\Users\\janik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\janik\\Documents\\GitHub\\Program\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/arrow/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\janik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
       },
       "frameworks": {
         "net8.0": {
@@ -38,6 +44,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -54,27 +65,13 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.10, 8.0.10]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /home/arrow/Documents/program/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
