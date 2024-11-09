@@ -1,32 +1,6 @@
 # Ingore this
 obj
 bin
-.vscode
-.vs
 
 # Dont Ingore
 !.gitignore
-*.cache
-*.pdb
-*.pdb
-bin/Debug/net8.0/Program.dll
-bin/Debug/net8.0/Program.exe
-bin/Debug/net8.0/Program.pdb
-obj/Debug/net8.0/apphost.exe
-obj/Debug/net8.0/Program.AssemblyInfo.cs
-obj/Debug/net8.0/Program.AssemblyInfoInputs.cache
-obj/Debug/net8.0/Program.assets.cache
-obj/Debug/net8.0/Program.csproj.CoreCompileInputs.cache
-obj/Debug/net8.0/Program.csproj.FileListAbsolute.txt
-obj/Debug/net8.0/Program.dll
-obj/Debug/net8.0/Program.GeneratedMSBuildEditorConfig.editorconfig
-obj/Debug/net8.0/Program.genruntimeconfig.cache
-obj/Debug/net8.0/Program.pdb
-obj/Debug/net8.0/Program.sourcelink.json
-obj/Debug/net8.0/ref/Program.dll
-obj/Debug/net8.0/refint/Program.dll
-obj/Program.csproj.nuget.dgspec.json
-obj/Program.csproj.nuget.g.props
-obj/project.assets.json
-obj/project.nuget.cache
-obj/project.nuget.cache
