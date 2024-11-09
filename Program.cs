@@ -7,7 +7,8 @@
     {
         static void Main()
         {
-            ObsluznyProgram.SuciastkyInput();
+            Console.Write(Console.ReadLine());
+            Console.ReadKey();
         }
     }
 }

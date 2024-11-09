@@ -142,7 +142,7 @@ namespace Auta
         }
         public static Auto CreateAuto()
         {
-            Auto auto = null;
+            Auto? auto = null;
             Console.WriteLine(" 1 - Nakladne\n 2 - Osobne\n");
             switch (GetIntInRange("Volba: ", 1, 2, true))
             {

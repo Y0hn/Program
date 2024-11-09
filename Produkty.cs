@@ -99,6 +99,7 @@ namespace Produkty
         }
         public static Suciastka GetInput()
         {
+#pragma warning disable CS8604 // Possible null reference argument.
             Console.Write("Nazov suciastky: ");
             string s = Console.ReadLine().Trim();
             Console.Write("Material (nazov,znacka): ");
@@ -118,6 +119,7 @@ namespace Produkty
             int cp = int.Parse(Console.ReadLine());
             Console.Write("Cena: ");
             double cena = double.Parse(Console.ReadLine());
+#pragma warning restore CS8604 // Possible null reference argument.
 
             return new Suciastka(s, t[0], m, xy[0], xy[1], t[1], q, cp, cena);
         }

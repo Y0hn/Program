@@ -9,14 +9,16 @@ using Osoby;
 using Ucty;
 using Auta;
 using Produkty;
-using System.Reflection;
-using System.Security.Cryptography;
 
 namespace Program
 {
-    class ObsluznyProgram
-    {        
-        const string path = @"C:/Users/janik/Documents/GitHub/Program/";
+    /// <summary>
+    /// Toto je Subor Obsluznych programov
+    /// </summary>
+    static class ObsluznyProgram
+    {
+        static string? path = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+
         public static void Auta()
         {
             string chooses = " 1 => Vloz auto\n 2 => Odstran auto\n 3 => Zoznam aut\n 4 => Info o aute \n 5 => koniec";
@@ -61,13 +63,122 @@ namespace Program
             Console.WriteLine(xml);
             Console.ReadKey();
         }
-        static IEnumerable<int> ProduceEvenNumbers(int upto)
+        private static IEnumerable<int> ProduceEvenNumbers(int upto)
         {
             for (int i = 0; i <= upto; i += 2)
             {
                 yield return i;
             }
         }
+        public static void MainSklady()
+		{
+			List<Sklad> s = new List<Sklad>();
+			string input;
+			while (true)
+			{
+				Console.Clear();
+				Console.Write("Vytvor sklad na adrese: ");
+				input = Console.ReadLine();
+				if (input == "EXIT" || input == "exit")
+					break;
+
+				int c = -1;
+				string inp;
+				do
+				{
+					Console.Write("Kapacita skadu: ");
+					inp = Console.ReadLine();
+				}
+				while (!int.TryParse(inp, out c) || c <= 0);
+
+
+				Console.Write("Typ skladu: \n[ p = predsklad / k = koncovy sklad ]\n");
+				string typ = Console.ReadLine();
+
+                if (input != null)
+				    if (typ.Contains('p'))
+				    	s.Add(new Predskladisko(input, c));
+				    else if (typ.Contains('k'))
+				    	s.Add(new KoncovySklad(input, c));
+			}
+			while (true)
+			{
+				Console.Clear();
+				Sklad select = null;
+				do
+				{
+					Console.WriteLine("Sklady: ");
+					foreach (Sklad skad in s)
+						Console.WriteLine("\t" + skad.adresa);
+					Console.Write("Praca so skladom na adrese: ");
+					input = Console.ReadLine();
+					if (input == "exit")
+						break;
+                    else if (input == null)
+                        continue;
+					bool b = false;
+					foreach (Sklad skad in s)
+						if (skad.adresa.Contains(input))
+						{
+							if (!b)
+							{
+								select = skad;
+								b = true;
+							}
+							else
+							{
+								select = null;
+								break;
+							}
+						}
+					if (select == null)
+						Console.WriteLine("Sklad nebo urceny!");
+				}
+				while (select == null);
+				if (input == "exit")
+					break;
+				bool p, v;
+				do
+				{
+					Console.Write("Pridat / Vydat tovar [p/v]: ");
+					input = Console.ReadLine();
+					p = input.Contains('p');
+					v = input.Contains('v');
+				}
+				while (!(p || v) && !(p && v));
+				input = "";
+
+				int t = -1;
+				string inp;
+				do
+				{
+					if (p)
+						Console.Write("Pridat tovar: ");
+					else if (v)
+						Console.Write("Vyvies tovar: ");
+					inp = Console.ReadLine();
+				}
+				while (!int.TryParse(inp, out t) || t <= 0);
+
+				if (p)
+				{
+					if (select.PrijemTovaru(t))
+						Console.WriteLine("Uspech");
+					else Console.WriteLine("Neuspech");
+				}
+				else
+				{
+					if (select.VydajTovaru(t))
+						Console.WriteLine("Uspech");
+					else Console.WriteLine("Neuspech");
+				}
+				Console.ReadKey();
+			}
+
+			foreach (Sklad sklad in s)
+				Console.WriteLine(sklad.ToString() + "\n");
+			Console.ReadKey();
+		}
         public static void Zamestnanec()
         {
             IZamestnanec[] emploies = new IZamestnanec[2];
@@ -152,6 +263,7 @@ namespace Program
             while (!(suc && min <= ret && ret <= max ));
             return ret;
         }
+#pragma warning disable CS8604 // Possible null reference argument.
         public static void Vynimky()
         {
             int[] pole = new int[10];
@@ -168,10 +280,12 @@ namespace Program
                 catch (FormatException ex)
                 { 
                     Console.WriteLine("Nespravny format ");
+                    _ = ex;
                 }
                 catch (IndexOutOfRangeException ex)
                 {
                     Console.WriteLine("Index mimo range ");
+                    _ = ex;
                 }
                 finally
                 {
@@ -207,6 +321,7 @@ namespace Program
                 }
             }
         }
+#pragma warning restore CS8604 // Possible null reference argument.
         private static void DebugLog(string message)
         {
             var time = DateTime.Now;
@@ -294,7 +409,10 @@ namespace Program
                         break;
                     case "3":
                         Console.Write("Nazov suciastky: ");
-                        sucs.Remove(sucs.Find(s => s.nazov == Console.ReadLine().Trim()));
+                        string nazov = Console.ReadLine().Trim();
+                        Suciastka r = sucs.Find(s => s.nazov == nazov);
+                        if (r != null)
+                            sucs.Remove(r);
                         break;
                     default:
                         foreach(var s in sucs)
