@@ -7,7 +7,8 @@
     {
         static void Main()
         {
-            Console.Write("Aoj Svet");
+            ObsluznyProgram.Fronta();
+
         }
     }
 }

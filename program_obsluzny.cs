@@ -579,5 +579,33 @@ namespace Program
                     wait = true;
             }
         }
+        public static void Zasobnik()
+        {
+            Stack<string> zasobnik = new Stack<string>();
+            zasobnik.Push("Pondelok");
+            zasobnik.Push("Utorok");
+            zasobnik.Push("Streda");
+            zasobnik.Push("Stvrtok");
+            zasobnik.Push("Piatok");
+
+            string poslednyZapis = zasobnik.Peek();
+            while (0 < zasobnik.Count)
+                Console.WriteLine($"Zasobnik ma {zasobnik.Count} poloziek a najneskorsia bola {zasobnik.Pop()}");
+            zasobnik.Clear();
+        }
+        public static void Fronta()
+        {
+            Queue<string> fronta = new Queue<string>();
+            fronta.Enqueue("Pondelok");
+            fronta.Enqueue("Utorok");
+            fronta.Enqueue("Streda");
+            fronta.Enqueue("Stvrtok");
+            fronta.Enqueue("Piatok");
+
+            string prvyZapis = fronta.Peek();
+            while (0 < fronta.Count)
+                Console.WriteLine($"Zasobnik ma {fronta.Count} poloziek a najneskorsia bola {fronta.Dequeue()}");
+            fronta.Clear();
+        }
     }
 }
