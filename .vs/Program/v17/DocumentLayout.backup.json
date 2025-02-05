@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\janik\\Documents\\GitHub\\Program\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|c:\\users\\janik\\documents\\github\\program\\program_obsluzny.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|solutionrelative:program_obsluzny.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|c:\\users\\janik\\documents\\github\\program\\produkty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|solutionrelative:produkty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|c:\\users\\janik\\documents\\github\\program\\auta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|solutionrelative:auta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|c:\\users\\janik\\documents\\github\\program\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{413F6B61-4230-4214-B506-257454335123}|Program.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +43,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Produkty.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Produkty.cs",
+              "RelativeDocumentMoniker": "Produkty.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Produkty.cs",
+              "RelativeToolTip": "Produkty.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAADwv3kAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T14:06:24.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Auta.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Auta.cs",
+              "RelativeDocumentMoniker": "Auta.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Auta.cs",
+              "RelativeToolTip": "Auta.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAIMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T14:03:39.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "program_obsluzny.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\GitHub\\Program\\program_obsluzny.cs",
+              "RelativeDocumentMoniker": "program_obsluzny.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\GitHub\\Program\\program_obsluzny.cs",
+              "RelativeToolTip": "program_obsluzny.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T14:02:08.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Osoby.cs",
               "DocumentMoniker": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Osoby.cs",
               "RelativeDocumentMoniker": "Osoby.cs",
@@ -42,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Budovy.cs",
               "DocumentMoniker": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Budovy.cs",
               "RelativeDocumentMoniker": "Budovy.cs",
@@ -54,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\janik\\Documents\\GitHub\\Program\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -62,8 +111,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T11:17:00.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T11:17:00.646Z"
             }
           ]
         }

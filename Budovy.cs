@@ -121,4 +121,19 @@
             return false;
         }
     }
+
+
+    public class TPozicovna
+    {
+        string nazov;
+        bool vPrevadzke;
+        List<Auta.TVozidlo> auta;
+
+        public TPozicovna(string n, List<Auta.TVozidlo> a, bool vp)
+        {
+            nazov = n;
+            auta = a;
+            vPrevadzke = vp;
+        }
+    }
 }

@@ -207,12 +207,12 @@ namespace Auta
     }
     public class Autobus
     {
-        public string SPZ { get; }
+        public string? SPZ { get; }
         private byte pocetMiest;
         private int rokVyroby;
-        private Osoby.Vodic vodic;
+        private Osoby.Vodic? vodic;
 
-        public Autobus(string spz, byte pM, int rV, Osoby.Vodic v = null)
+        public Autobus(string? spz, byte pM, int rV, Osoby.Vodic? v = null)
         {
             SPZ = spz;
             pocetMiest = pM;
@@ -251,6 +251,24 @@ namespace Auta
                 s += "Nema vodica";
                 
             return s;
+        }
+    }
+
+    public class TVozidlo
+    {
+        string znacka;
+        int rocnik;
+        string color;
+        float najazdene;
+        double cena;
+
+        public TVozidlo(string z, int r, string co, float n, double ce)
+        {
+            znacka = z;
+            rocnik = r;
+            color = co;
+            najazdene = n;
+            cena = ce;
         }
     }
 }
