@@ -7,7 +7,8 @@
     {
         static void Main()
         {
-            
+            ObsluznyProgram.Fronta();
+
         }
     }
 }
